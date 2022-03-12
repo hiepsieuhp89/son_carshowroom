@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 05, 2022 at 09:55 AM
+-- Generation Time: Mar 12, 2022 at 04:42 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 7.4.26
 
@@ -147,6 +147,40 @@ DELIMITER ;
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `kho`
+--
+
+CREATE TABLE `kho` (
+  `MAKHO` int(11) NOT NULL,
+  `TENKHO` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `DIACHI` varchar(200) COLLATE utf8_unicode_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `kho`
+--
+
+INSERT INTO `kho` (`MAKHO`, `TENKHO`, `DIACHI`) VALUES
+(1, 'Việt Nam', ''),
+(2, 'Mỹ', NULL),
+(4, 'Nga', ''),
+(5, 'Đức', ''),
+(6, 'Anh', ''),
+(7, 'Pháp', ''),
+(8, 'Trung Quốc', ''),
+(9, 'Nhật Bản', '');
+
+--
+-- Triggers `kho`
+--
+DELIMITER $$
+CREATE TRIGGER `xoasach_nxb` BEFORE DELETE ON `kho` FOR EACH ROW DELETE FROM SACH WHERE MANXB = OLD.MANXB
+$$
+DELIMITER ;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `loaixe`
 --
 
@@ -185,57 +219,23 @@ DELIMITER ;
 --
 
 CREATE TABLE `nhaphanphoi` (
-  `MANXB` int(11) NOT NULL,
-  `TENNXB` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `DIACHI` varchar(200) COLLATE utf8_unicode_ci DEFAULT NULL
+  `MANPP` int(11) NOT NULL,
+  `TENNPP` varchar(200) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `GIOITHIEU` varchar(1000) COLLATE utf8_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `nhaphanphoi`
 --
 
-INSERT INTO `nhaphanphoi` (`MANXB`, `TENNXB`, `DIACHI`) VALUES
-(1, 'Việt Nam', ''),
-(2, 'Mỹ', NULL),
-(4, 'Nga', ''),
-(5, 'Đức', ''),
-(6, 'Anh', ''),
-(7, 'Pháp', ''),
-(8, 'Trung Quốc', ''),
-(9, 'Nhật Bản', '');
+INSERT INTO `nhaphanphoi` (`MANPP`, `TENNPP`, `GIOITHIEU`) VALUES
+(1, 'npp1', '');
 
 --
 -- Triggers `nhaphanphoi`
 --
 DELIMITER $$
-CREATE TRIGGER `xoasach_nxb` BEFORE DELETE ON `nhaphanphoi` FOR EACH ROW DELETE FROM SACH WHERE MANXB = OLD.MANXB
-$$
-DELIMITER ;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tacgia`
---
-
-CREATE TABLE `tacgia` (
-  `MATG` int(11) NOT NULL,
-  `TENTG` varchar(200) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `GIOITHIEU` varchar(1000) COLLATE utf8_unicode_ci DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Dumping data for table `tacgia`
---
-
-INSERT INTO `tacgia` (`MATG`, `TENTG`, `GIOITHIEU`) VALUES
-(1, 'npp1', '');
-
---
--- Triggers `tacgia`
---
-DELIMITER $$
-CREATE TRIGGER `xoasach_tg` BEFORE DELETE ON `tacgia` FOR EACH ROW DELETE FROM SACH WHERE MATG = OLD.MATG
+CREATE TRIGGER `xoasach_tg` BEFORE DELETE ON `nhaphanphoi` FOR EACH ROW DELETE FROM SACH WHERE MATG = OLD.MATG
 $$
 DELIMITER ;
 
@@ -268,36 +268,36 @@ INSERT INTO `taikhoan` (`MATK`, `TENTK`, `MATKHAU`, `CHUCVU`) VALUES
 
 CREATE TABLE `xe` (
   `MAXE` int(11) NOT NULL,
-  `MANXB` int(11) DEFAULT NULL,
+  `MANPP` int(11) DEFAULT NULL,
   `MALOAI` int(11) DEFAULT NULL,
   `MADMS` int(11) DEFAULT NULL,
-  `MATG` int(11) DEFAULT NULL,
-  `TENSACH` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `MAKHO` int(11) DEFAULT NULL,
+  `TENXE` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
   `GIABAN` bigint(20) DEFAULT NULL,
   `BAIGIOITHIEU` mediumtext COLLATE utf8_unicode_ci DEFAULT NULL,
   `HINH` varchar(200) COLLATE utf8_unicode_ci DEFAULT NULL,
   `KICHTHUOC` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `SOTRANG` int(11) DEFAULT NULL,
   `SOLUONG` int(11) DEFAULT NULL,
+  `DUNGTICHXILANH` int(11) DEFAULT NULL,
   `CONLAI` int(11) DEFAULT NULL,
-  `NGAYXB` date DEFAULT NULL
+  `NGAYXX` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `xe`
 --
 
-INSERT INTO `xe` (`MAXE`, `MANXB`, `MALOAI`, `MADMS`, `MATG`, `TENSACH`, `GIABAN`, `BAIGIOITHIEU`, `HINH`, `KICHTHUOC`, `SOTRANG`, `SOLUONG`, `CONLAI`, `NGAYXB`) VALUES
-(1, 1, 1, 1, 1, 'ALPHARD LUXURY', 4240000000, '<p>ALPHARD LUXURY</p>', 'FA21DE2EC8CCDA7CB5F2D183D11AA860[2].png', '23', 12, 23231, 23231, '2022-03-15');
+INSERT INTO `xe` (`MAXE`, `MANPP`, `MALOAI`, `MADMS`, `MAKHO`, `TENXE`, `GIABAN`, `BAIGIOITHIEU`, `HINH`, `KICHTHUOC`, `SOLUONG`, `DUNGTICHXILANH`, `CONLAI`, `NGAYXX`) VALUES
+(2, 1, 1, 1, 1, 'XE 1', 12000000, '<p>1 2 3&nbsp;</p>', '42c33407a0216f7f36303.jpg', '1234', 10, 123, 10, '2022-03-16');
 
 --
 -- Triggers `xe`
 --
 DELIMITER $$
 CREATE TRIGGER `xoacthd_danhgia_binhluan_sach` BEFORE DELETE ON `xe` FOR EACH ROW BEGIN
-DELETE FROM CHITIETHOADON WHERE MAXE = OLD.MAXE;
-DELETE FROM DANHGIA WHERE MAXE = OLD.MAXE;
-DELETE FROM BINHLUAN WHERE MAXE = OLD.MAXE;
+DELETE FROM CHITIETHOADON WHERE MASACH = OLD.MASACH;
+DELETE FROM DANHGIA WHERE MASACH = OLD.MASACH;
+DELETE FROM BINHLUAN WHERE MASACH = OLD.MASACH;
 END
 $$
 DELIMITER ;
@@ -346,6 +346,12 @@ ALTER TABLE `khachhang`
   ADD PRIMARY KEY (`MAKH`);
 
 --
+-- Indexes for table `kho`
+--
+ALTER TABLE `kho`
+  ADD PRIMARY KEY (`MAKHO`);
+
+--
 -- Indexes for table `loaixe`
 --
 ALTER TABLE `loaixe`
@@ -355,13 +361,7 @@ ALTER TABLE `loaixe`
 -- Indexes for table `nhaphanphoi`
 --
 ALTER TABLE `nhaphanphoi`
-  ADD PRIMARY KEY (`MANXB`);
-
---
--- Indexes for table `tacgia`
---
-ALTER TABLE `tacgia`
-  ADD PRIMARY KEY (`MATG`);
+  ADD PRIMARY KEY (`MANPP`);
 
 --
 -- Indexes for table `taikhoan`
@@ -374,10 +374,10 @@ ALTER TABLE `taikhoan`
 --
 ALTER TABLE `xe`
   ADD PRIMARY KEY (`MAXE`),
-  ADD KEY `FK_QH_NXB_SACH` (`MANXB`),
+  ADD KEY `FK_QH_NXB_SACH` (`MANPP`),
   ADD KEY `FK_QH_SACH_DANHMUC` (`MADMS`),
   ADD KEY `FK_QH_SACH_loaixe` (`MALOAI`),
-  ADD KEY `FK_QH_SACH_TACGIA` (`MATG`);
+  ADD KEY `FK_QH_SACH_TACGIA` (`MAKHO`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -402,6 +402,12 @@ ALTER TABLE `khachhang`
   MODIFY `MAKH` int(11) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `kho`
+--
+ALTER TABLE `kho`
+  MODIFY `MAKHO` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
 -- AUTO_INCREMENT for table `loaixe`
 --
 ALTER TABLE `loaixe`
@@ -411,13 +417,7 @@ ALTER TABLE `loaixe`
 -- AUTO_INCREMENT for table `nhaphanphoi`
 --
 ALTER TABLE `nhaphanphoi`
-  MODIFY `MANXB` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
-
---
--- AUTO_INCREMENT for table `tacgia`
---
-ALTER TABLE `tacgia`
-  MODIFY `MATG` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `MANPP` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `taikhoan`
@@ -429,7 +429,7 @@ ALTER TABLE `taikhoan`
 -- AUTO_INCREMENT for table `xe`
 --
 ALTER TABLE `xe`
-  MODIFY `MAXE` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `MAXE` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Constraints for dumped tables
@@ -465,9 +465,9 @@ ALTER TABLE `hoadon`
 -- Constraints for table `xe`
 --
 ALTER TABLE `xe`
-  ADD CONSTRAINT `FK_QH_NXB_SACH` FOREIGN KEY (`MANXB`) REFERENCES `nhaphanphoi` (`MANXB`),
+  ADD CONSTRAINT `FK_QH_NXB_SACH` FOREIGN KEY (`MANPP`) REFERENCES `kho` (`MAKHO`),
   ADD CONSTRAINT `FK_QH_SACH_DANHMUC` FOREIGN KEY (`MADMS`) REFERENCES `hangxe` (`MADMS`),
-  ADD CONSTRAINT `FK_QH_SACH_TACGIA` FOREIGN KEY (`MATG`) REFERENCES `tacgia` (`MATG`),
+  ADD CONSTRAINT `FK_QH_SACH_TACGIA` FOREIGN KEY (`MAKHO`) REFERENCES `nhaphanphoi` (`MANPP`),
   ADD CONSTRAINT `FK_QH_SACH_loaixe` FOREIGN KEY (`MALOAI`) REFERENCES `loaixe` (`MALOAI`);
 COMMIT;
 

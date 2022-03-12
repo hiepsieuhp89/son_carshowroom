@@ -31,16 +31,16 @@
 						<img src="hinh/{$result['HINH']}">
 					</div>
 					<div class="col-xs-7 col-sm-7 col-md-7 col-lg-7">
-						<h3 class="text-primary">{$result['TENSACH']}</h3>
+						<h3 class="text-primary">{$result['TENXE']}</h3>
 						<div class="thongtincoban">
 							<table class="table table-hover">
 								<caption><h4>Thông tin xe</h4></caption>
 								<tbody>
 									<tr>
-										<td>Nhà phân phối: </td><td>{$result['TENTG']}</td>
+										<td>Nhà phân phối: </td><td>{$result['TENNPP']}</td>
 									</tr>
 									<tr>
-										<td>Nhà phân phối: </td><td>{$result['TENNXB']}</td>
+										<td>Nhà phân phối: </td><td>{$result['TENKHO']}</td>
 									</tr>
 									<tr>
 										<td>Hãng xe: </td><td>{$result['TENDMS']}</td>
@@ -52,7 +52,7 @@
 										<td>Kích thước: </td><td>{$result['KICHTHUOC']}</td>
 									</tr>
 									<tr>
-										<td>Dung tích xi lanh: </td><td>{$result['SOTRANG']}</td>
+										<td>Dung tích xi lanh: </td><td>{$result['DUNGTICHXILANH']}</td>
 									</tr>
 									<tr>
 										<td>Số lượng: </td><td>{$result['SOLUONG']}</td>

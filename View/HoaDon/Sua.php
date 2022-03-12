@@ -125,9 +125,9 @@ EOD;
 
 									foreach ($result_s as $row_s) {
 										if ($row_s['MAXE'] == $row['MAXE']) {
-											$option_sach .= "<option selected value='{$row_s['MAXE']}'>{$row_s['TENSACH']}</option>";
+											$option_sach .= "<option selected value='{$row_s['MAXE']}'>{$row_s['TENXE']}</option>";
 										} else {
-											$option_sach .= "<option value='{$row_s['MAXE']}'>{$row_s['TENSACH']}</option>";
+											$option_sach .= "<option value='{$row_s['MAXE']}'>{$row_s['TENXE']}</option>";
 										}
 									}
 
@@ -153,7 +153,7 @@ EOD;
 								$item_cthd = "<td><select name='masach[]' class='form-control'>";
 
 								foreach ($result_s as $row_s) {
-									$item_cthd .= "<option value='{$row_s['MAXE']}'>{$row_s['TENSACH']}</option>";
+									$item_cthd .= "<option value='{$row_s['MAXE']}'>{$row_s['TENXE']}</option>";
 								}
 
 								$item_cthd .= "</select></td>";

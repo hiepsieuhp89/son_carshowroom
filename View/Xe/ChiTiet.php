@@ -29,7 +29,7 @@
 <?php
 	$moi = '';
 
-	$ngayxb = $result['NGAYXB'];
+	$ngayxb = $result['NGAYXX'];
 	if($ngayxb != '')
 	{
 
@@ -94,22 +94,22 @@ EOD;
 					$tdg
 				</div>
 				<div class="col-xs-7 col-sm-7 col-md-7 col-lg-7">
-					<div class="tensanpham"><h3 class="text-primary">{$result['TENSACH']}</h3></div>
+					<div class="tensanpham"><h3 class="text-primary">{$result['TENXE']}</h3></div>
 					<div class="thongtincoban">
 						<table class="table table-hover">
 							<caption><h4>Thông tin xe</h4></caption>
 							<tbody>
 								<tr>
-									<td>Nhà phân phối: </td><td>{$result['TENTG']}</td>
+									<td>Nhà phân phối: </td><td>{$result['TENNPP']}</td>
 								</tr>
 								<tr>
-									<td>Nhà phân phối: </td><td>{$result['TENNXB']}</td>
+									<td>Nhà phân phối: </td><td>{$result['TENKHO']}</td>
 								</tr>
 								<tr>
 									<td>Kích thước: </td><td>{$result['KICHTHUOC']}</td>
 								</tr>
 								<tr>
-									<td>Dung tích xi lanh: </td><td>{$result['SOTRANG']}</td>
+									<td>Dung tích xi lanh: </td><td>{$result['DUNGTICHXILANH']}</td>
 								</tr>
 							</tbody>
 						</table>
@@ -157,7 +157,7 @@ EOD;
 					if($row['MAXE'] == $id)
 						continue;
 					$moi = '';
-					$ngayxb = $row['NGAYXB'];
+					$ngayxb = $row['NGAYXX'];
 					if($ngayxb != '')
 					{
 						$today = date('Y-m-d');
@@ -188,7 +188,7 @@ EOD;
 							<div class="panel-body panel-sach text-center">
 								<img class="biasach" src="hinh/{$row['HINH']}">
 								$moi
-								<div class="tensach text-ellipsis"><a href="index.php?act=xem&hienthi=chitiet&madms={$row['MADMS']}&maloai={$row['MALOAI']}&masach={$row['MAXE']}">{$row['TENSACH']}</a></div>
+								<div class="tensach text-ellipsis"><a href="index.php?act=xem&hienthi=chitiet&madms={$row['MADMS']}&maloai={$row['MALOAI']}&masach={$row['MAXE']}">{$row['TENXE']}</a></div>
 								<div class="giaban text-danger">Giá bán: $gia VNĐ</div>
 								<form method="post">
 									<input type="hidden" name="masach" value="{$row['MAXE']}">

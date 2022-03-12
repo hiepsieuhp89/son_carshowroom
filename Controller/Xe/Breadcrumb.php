@@ -21,7 +21,7 @@
 		{
 			$s = new Xe();
 			$result = $s->LaySachTheoMa($_GET["masach"]);
-			$tensach = $result['TENSACH'];
+			$tensach = $result['TENXE'];
 		}
 	}
 	else

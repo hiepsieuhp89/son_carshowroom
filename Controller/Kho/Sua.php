@@ -17,7 +17,7 @@
 		else
 		{
 			$result = $nxb->LayKhoTheoMa($manxb);
-			$tennxb = $result['TENNXB'];
+			$tennxb = $result['TENKHO'];
 			$diachi = $result['DIACHI'];
 		}
 

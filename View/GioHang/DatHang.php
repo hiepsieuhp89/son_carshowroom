@@ -60,7 +60,7 @@
 								<tr>
 									<td>$id</td>
 									<td class="col-sm-6">
-										{$row['TENSACH']}
+										{$row['TENXE']}
 									</td>
 									<td>
 										{$row['SoLuong']}

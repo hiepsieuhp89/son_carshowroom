@@ -12,7 +12,7 @@
 	else
 	{
 		$result = $tg->LayTacGiaTheoMa($matg);
-		$tentg = $result['TENTG'];
+		$tentg = $result['TENNPP'];
 		$gioithieu = $result['GIOITHIEU'];
 	}
 

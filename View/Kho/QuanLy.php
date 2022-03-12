@@ -15,12 +15,12 @@
 						foreach ($result as $row) {
 							$item = <<< EOD
 								<tr>
-									<td>{$row['MANXB']}</td>
-									<td>{$row['TENNXB']}</td>
+									<td>{$row['MAKHO']}</td>
+									<td>{$row['TENKHO']}</td>
 									<td>{$row['DIACHI']}</td>
 									<td>
-										<a href="admin.php?c=Kho&act=Sua&manxb={$row['MANXB']}" class="btn btn-primary">Sửa</a>
-										<a href="admin.php?c=Kho&act=Xoa&manxb={$row['MANXB']}" class="btn btn-danger">Xoá</a>
+										<a href="admin.php?c=Kho&act=Sua&manxb={$row['MAKHO']}" class="btn btn-primary">Sửa</a>
+										<a href="admin.php?c=Kho&act=Xoa&manxb={$row['MAKHO']}" class="btn btn-danger">Xoá</a>
 									</td>
 								</tr>
 EOD;

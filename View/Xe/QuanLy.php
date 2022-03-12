@@ -72,9 +72,9 @@
 								<tr>
 									<td>$i</td>
 									<td class="col-sm-5">
-										<img width="60px" height="80px" src="hinh/{$row['HINH']}"> {$row['TENSACH']}
+										<img width="60px" height="80px" src="hinh/{$row['HINH']}"> {$row['TENXE']}
 									</td>
-									<td>{$row['TENTG']}</td>
+									<td>{$row['TENNPP']}</td>
 									<td>$gia VNĐ</td>
 									<td>
 										<a href="admin.php?c=Xe&act=ChiTiet_QL&masach={$row['MAXE']}" class="btn btn-default">Chi tiết</a>

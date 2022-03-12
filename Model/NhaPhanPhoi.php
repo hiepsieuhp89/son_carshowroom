@@ -9,30 +9,30 @@
 		}
 
 		function LayTacGia(){
-			$sql = "SELECT * FROM TACGIA";
+			$sql = "SELECT * FROM NHAPHANPHOI";
 			return $this->cn->FetchAll($sql);
 		}
 
 		function LayTacGiaTheoMa($id){
-			$sql = "SELECT * FROM TACGIA WHERE MATG = $id";
+			$sql = "SELECT * FROM NHAPHANPHOI WHERE MANPP = $id";
 			return $this->cn->Fetch($sql);
 		}
 
 		function ThemTacGia($tentg, $gioithieu)
 		{
-			$sql = "INSERT INTO TACGIA(TENTG, GIOITHIEU) VALUES('$tentg', '$gioithieu')";
+			$sql = "INSERT INTO NHAPHANPHOI(TENNPP, GIOITHIEU) VALUES('$tentg', '$gioithieu')";
 			return $this->cn->ExecuteQueryInsert($sql);
 		}
 
 		function CapNhatTacGia($matg, $tentg, $gioithieu)
 		{
-			$sql = "UPDATE TACGIA SET TENTG = '$tentg', GIOITHIEU = '$gioithieu' WHERE MATG = $matg";
+			$sql = "UPDATE NHAPHANPHOI SET TENNPP = '$tentg', GIOITHIEU = '$gioithieu' WHERE MANPP = $matg";
 			return $this->cn->ExecuteQuery($sql);
 		}
 
 		function XoaTacGia($matg)
 		{
-			$sql = "DELETE FROM TACGIA WHERE MATG = $matg";
+			$sql = "DELETE FROM NHAPHANPHOI WHERE MANPP = $matg";
 			return $this->cn->ExecuteQuery($sql);
 		}
 

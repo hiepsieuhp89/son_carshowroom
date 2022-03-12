@@ -40,7 +40,7 @@
 					<select name="matg" class="form-control" required>
 						<?php
 							foreach ($list_tg as $row) {
-								echo "<option value='{$row['MATG']}'>{$row['TENTG']}</option>";
+								echo "<option value='{$row['MANPP']}'>{$row['TENNPP']}</option>";
 							}
 						?>
 					</select>
@@ -52,7 +52,7 @@
 					<select name="manxb" class="form-control" required>
 						<?php
 							foreach ($list_nxb as $row) {
-								echo "<option value='{$row['MANXB']}'>{$row['TENNXB']}</option>";
+								echo "<option value='{$row['MAKHO']}'>{$row['TENKHO']}</option>";
 							}
 						?>
 					</select>

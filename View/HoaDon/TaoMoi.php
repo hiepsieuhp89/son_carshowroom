@@ -71,7 +71,7 @@
 
 	foreach ($result_s as $row_s)
 	{
-		$item_cthd.="<option value='{$row_s['MAXE']}'>{$row_s['TENSACH']}</option>";
+		$item_cthd.="<option value='{$row_s['MAXE']}'>{$row_s['TENXE']}</option>";
 	}
 
 	$item_cthd.="</select></td>";

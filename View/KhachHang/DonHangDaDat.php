@@ -71,7 +71,7 @@
 												$tr = <<< EOD
 										<tr>
 											<td>$i</td>
-											<td>{$r['TENSACH']}</td>
+											<td>{$r['TENXE']}</td>
 											<td>{$r['SOLUONG']}</td>
 										</tr>
 EOD;

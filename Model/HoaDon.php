@@ -20,7 +20,7 @@
 
 			if(($hoadon['TRANGTHAI'] == 0 && $trangthai == 2) || ($hoadon['TRANGTHAI'] == 0 && $trangthai == 1)){
 
-				$sql = "SELECT S.MAXE, S.TENSACH, CTHD.SOLUONG FROM CHITIETHOADON CTHD JOIN XE S ON CTHD.MAXE = S.MAXE WHERE CTHD.MAHD = $mahd";
+				$sql = "SELECT S.MAXE, S.TENXE, CTHD.SOLUONG FROM CHITIETHOADON CTHD JOIN XE S ON CTHD.MAXE = S.MAXE WHERE CTHD.MAHD = $mahd";
 
 				$chitiethoadon = $this->cn->FetchAll($sql);
 
@@ -42,7 +42,7 @@
 			}
 			if(($hoadon['TRANGTHAI'] == 1 || $hoadon['TRANGTHAI'] == 2)  && ($trangthai == 0 || $trangthai == 3 || $trangthai == 4)){
 
-				$sql = "SELECT S.MAXE, S.TENSACH, CTHD.SOLUONG FROM CHITIETHOADON CTHD JOIN XE S ON CTHD.MAXE = S.MAXE WHERE CTHD.MAHD = $mahd";
+				$sql = "SELECT S.MAXE, S.TENXE, CTHD.SOLUONG FROM CHITIETHOADON CTHD JOIN XE S ON CTHD.MAXE = S.MAXE WHERE CTHD.MAHD = $mahd";
 
 				$chitiethoadon = $this->cn->FetchAll($sql);
 

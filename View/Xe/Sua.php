@@ -36,18 +36,18 @@
 
 				$option_tg = '';
 				foreach ($list_tg as $row) {
-					if($result['MATG'] == $row['MATG'])
-						$option_tg.="<option selected value='{$row['MATG']}'>{$row['TENTG']}</option>";
+					if($result['MANPP'] == $row['MANPP'])
+						$option_tg.="<option selected value='{$row['MANPP']}'>{$row['TENNPP']}</option>";
 					else
-						$option_tg.="<option value='{$row['MATG']}'>{$row['TENTG']}</option>";
+						$option_tg.="<option value='{$row['MANPP']}'>{$row['TENNPP']}</option>";
 				}
 
 				$option_nxb = '';
 				foreach ($list_nxb as $row) {
-					if($result['MANXB'] == $row['MANXB'])
-						$option_nxb.="<option selected value='{$row['MANXB']}'>{$row['TENNXB']}</option>";
+					if($result['MAKHO'] == $row['MAKHO'])
+						$option_nxb.="<option selected value='{$row['MAKHO']}'>{$row['TENKHO']}</option>";
 					else
-						$option_nxb.="<option value='{$row['MANXB']}'>{$row['TENNXB']}</option>";
+						$option_nxb.="<option value='{$row['MAKHO']}'>{$row['TENKHO']}</option>";
 				}
 
 				$form = <<< EOD
@@ -77,7 +77,7 @@
 					<div class="form-group">
 						<label class="control-label col-sm-2" for="tensach">Tên xe: </label>
 						<div class="col-sm-5">
-							<input type="text" name="tensach" value="{$result['TENSACH']}" class="form-control" required>
+							<input type="text" name="tensach" value="{$result['TENXE']}" class="form-control" required>
 						</div>
 					</div>
 					<div class="form-group">
@@ -105,7 +105,7 @@
 					<div class="form-group">
 						<label class="control-label col-sm-2" for="ngayxb">Ngày xuất xưởng: </label>
 						<div class="col-sm-5">
-							<input type="text" name="ngayxb" value="{$result['NGAYXB']}" class="form-control date-picker" required>
+							<input type="text" name="ngayxb" value="{$result['NGAYXX']}" class="form-control date-picker" required>
 						</div>
 					</div>
 					<div class="form-group">
@@ -117,7 +117,7 @@
 					<div class="form-group">
 						<label class="control-label col-sm-2" for="sotrang">Dung tích xi lanh: </label>
 						<div class="col-sm-5">
-							<input type="text" name="sotrang" value="{$result['SOTRANG']}" class="form-control" required>
+							<input type="text" name="sotrang" value="{$result['DUNGTICHXILANH']}" class="form-control" required>
 						</div>
 					</div>
 					<div class="form-group">

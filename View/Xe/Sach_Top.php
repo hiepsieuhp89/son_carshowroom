@@ -12,7 +12,7 @@
 					foreach($r['xe'] as $row):
 						$moi = '';
 
-						$ngayxb = $row['NGAYXB'];
+						$ngayxb = $row['NGAYXX'];
 						$today = date('Y-m-d');
 
 						$diff = date_diff(date_create($today), date_create($ngayxb));
@@ -36,7 +36,7 @@
 								<div class="panel-body text-center">
 									<img class="biasach" src="hinh/{$row['HINH']}">
 									$moi
-									<div class="tensach text-ellipsis"><a href="index.php?c=Xe&act=ChiTiet&madms={$row['MADMS']}&maloai={$row['MALOAI']}&masach={$row['MAXE']}">{$row['TENSACH']}</a></div>
+									<div class="tensach text-ellipsis"><a href="index.php?c=Xe&act=ChiTiet&madms={$row['MADMS']}&maloai={$row['MALOAI']}&masach={$row['MAXE']}">{$row['TENXE']}</a></div>
 									<div class="giaban text-danger">Giá bán: $gia VNĐ</div>
 									<form method="post">
 										<input type="hidden" name="masach" value="{$row['MAXE']}">

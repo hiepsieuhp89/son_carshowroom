@@ -56,7 +56,7 @@ EOD;
 									<td class="col-md-1 stt">$id</td>
 									<td class="col-md-6">
 										<img height="100" width="70" class="img-thumbnail" src="hinh/{$row['HINH']}">
-										{$row['TENSACH']} x {$row['SoLuong']}
+										{$row['TENXE']} x {$row['SoLuong']}
 									</td>
 									<td class="col-md-2">
 										<div class="col-xs-12">

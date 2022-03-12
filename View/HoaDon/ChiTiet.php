@@ -83,7 +83,7 @@ EOD;
 								$r = <<< EOD
 									<tr>
 										<td>$i</td>
-										<td>{$row['TENSACH']}</td>
+										<td>{$row['TENXE']}</td>
 										<td>{$row['SOLUONG']}</td>
 									</tr>
 EOD;

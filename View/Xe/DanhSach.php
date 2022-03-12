@@ -100,7 +100,7 @@
 
 			$moi = '';
 
-			$ngayxb = $row['NGAYXB'];
+			$ngayxb = $row['NGAYXX'];
 
 			if($ngayxb != '')
 			{
@@ -137,9 +137,9 @@
 								$moi
 							</div>
 							<div class="col-sm-8">
-								<div class="tensach"><a href="index.php?c=Xe&act=ChiTiet&madms={$row['MADMS']}&maloai={$row['MALOAI']}&masach={$row['MAXE']}">{$row['TENSACH']}</a></div>
-								<div class="tentg">Nhà phân phối: {$row['TENTG']}</div>
-								<div class="tennxb">Nhà phân phối: {$row['TENNXB']}</div>
+								<div class="tensach"><a href="index.php?c=Xe&act=ChiTiet&madms={$row['MADMS']}&maloai={$row['MALOAI']}&masach={$row['MAXE']}">{$row['TENXE']}</a></div>
+								<div class="tentg">Nhà phân phối: {$row['TENNPP']}</div>
+								<div class="tennxb">Nhà phân phối: {$row['TENKHO']}</div>
 								<div class="giaban text-danger">Giá bán: $gia VNĐ</div>
 								<form method="post">
 									<input type="hidden" name="masach" value="{$row['MAXE']}">
@@ -164,7 +164,7 @@ EOD;
 						<div class="panel-body text-center">
 							<img class="biasach" src="hinh/{$row['HINH']}">
 							$moi
-							<div class="tensach text-ellipsis"><a href="index.php?c=Xe&act=ChiTiet&madms={$row['MADMS']}&maloai={$row['MALOAI']}&masach={$row['MAXE']}">{$row['TENSACH']}</a></div>
+							<div class="tensach text-ellipsis"><a href="index.php?c=Xe&act=ChiTiet&madms={$row['MADMS']}&maloai={$row['MALOAI']}&masach={$row['MAXE']}">{$row['TENXE']}</a></div>
 							<div class="giaban text-danger">Giá bán: $gia VNĐ</div>
 							<form method="post">
 								<input type="hidden" name="masach" value="{$row['MAXE']}">

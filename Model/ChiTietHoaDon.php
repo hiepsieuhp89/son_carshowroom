@@ -15,7 +15,7 @@
 
 		function LayChiTietHoaDonTheoMa($mahd)
 		{
-			$sql = "SELECT S.MAXE, S.TENSACH, CTHD.SOLUONG FROM CHITIETHOADON CTHD JOIN XE S ON CTHD.MAXE = S.MAXE WHERE CTHD.MAHD = $mahd";
+			$sql = "SELECT S.MAXE, S.TENXE, CTHD.SOLUONG FROM CHITIETHOADON CTHD JOIN XE S ON CTHD.MAXE = S.MAXE WHERE CTHD.MAHD = $mahd";
 			return $this->cn->FetchAll($sql);
 		}
 
